@@ -56,11 +56,11 @@
   fetchJSON('/api/projects').then(list => {
     state.projects = list.filter(p => p.status !== 'Planned');
     renderStats();
-    $('#projectGrid').innerHTML = state.projects.slice(0, 3).map((p, i) => `
+    $('#projectGrid').innerHTML = state.projects.map((p, i) => `
       <article class="proj" data-slug="${esc(p.slug)}">
         <div class="proj-cover" style="background:${p.cover_gradient || '#222'}">${p.cover_emoji || '💻'}</div>
         <div class="proj-row"><span class="n">${String(i + 1).padStart(2, '0')}</span>
-          <div><b>${esc(p.title)}</b><small>${esc((p.tags || []).slice(0, 3).join(' · '))}</small></div>
+          <div><b>${esc(p.title)}</b><small>${esc((p.tags || []).join(' · '))}</small></div>
           <span class="arr">→</span></div>
       </article>`).join('');document.querySelectorAll('.proj').forEach(c => c.addEventListener('click', () => {
   const p = state.projects.find(x => x.slug === c.dataset.slug);

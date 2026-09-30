@@ -1,231 +1,110 @@
 <!DOCTYPE html>
-<html lang="id" data-theme="dark">
-
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fariz Abdurahman Fakhri — Full-Stack Developer</title>
-  <meta name="description" content="Portofolio Fariz Abdurahman Fakhri (Ais), Full-Stack Developer.">
-
+  <meta name="description" content="Portfolio Fariz Abdurahman Fakhri (Ais), Full-Stack Developer.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Allura&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
 </head>
-
 <body>
-
-  <!-- ===== NAV ===== -->
-  <header class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="#home" class="brand">
-        <span class="brand-mark">AF</span>
-        <span class="brand-name">Fariz A. Fakhri</span>
-      </a>
-
-      <nav class="nav-links" id="navLinks">
-        <a href="#home" class="nav-link active">Home</a>
-        <a href="#about" class="nav-link">Tentang</a>
-        <a href="#skills" class="nav-link">Keahlian</a>
-        <a href="#work" class="nav-link">Proyek</a>
-        <a href="#experience" class="nav-link">Pengalaman</a>
-        <a href="#contact" class="nav-link">Kontak</a>
+<main>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="topbar">
+      <div class="brand"><b>FULL-STACK DEVELOPER</b><span>QA &amp; IT SUPPORT</span></div>
+      <nav class="topnav">
+        <a href="#work">Projects</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
       </nav>
-
-      <div class="nav-actions">
-        <button id="themeToggle" class="icon-btn" aria-label="Ganti tema terang/gelap" title="Ganti tema">
-          <svg class="icon icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2" stroke-linecap="round">
-            <circle cx="12" cy="12" r="4" />
-            <path
-              d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
-          </svg>
-          <svg class="icon icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z" />
-          </svg>
-        </button>
-        <a href="#contact" class="btn btn-primary btn-sm">Sapa saya</a>
-        <button id="navToggle" class="icon-btn nav-burger" aria-label="Buka menu">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round">
-            <path d="M3 6h18M3 12h18M3 18h18" />
-          </svg>
-        </button>
-      </div>
+      <div class="avail" id="availabilityPill"><span id="availabilityText">Loading…</span> <i>✦</i></div>
     </div>
-  </header>
-
-  <main>
-
-    <!-- ===== HERO ===== -->
-    <section class="hero" id="home">
-      <div class="hero-outline-type" aria-hidden="true">
-        <span>AIS</span>
-      </div>
-
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <p class="status-pill" id="availabilityPill">
-            <span class="status-dot"></span>
-            <span id="availabilityText">Memuat status…</span>
-          </p>
-
-          <h1 class="hero-title">
-            FARIZ ABDURAHMAN FAKHRI
-          </h1>
-
-          <p class="hero-sub" id="heroTagline">
-            Ais — Full-Stack Developer dengan latar belakang IT support &amp; quality assurance.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#work" class="btn btn-primary">Lihat proyek saya</a>
-            <a href="#contact" class="btn btn-ghost">Hubungi saya</a>
-          </div>
-
-          <div class="hero-quickfacts" id="quickFacts">
-            <!-- diisi oleh JS -->
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="avatar-frame">
-            <div class="avatar-placeholder" id="avatarPlaceholder">
-              <img src="/assets/fariz-photo.jpg" alt="Foto Fariz Abdurahman Fakhri">
-            </div>
-            <div class="chip chip-1">Node.js</div>
-            <div class="chip chip-2">React</div>
-            <div class="chip chip-3">SQL</div>
-            <div class="chip chip-4">QA Testing</div>
-            <div class="chip chip-5">Express</div>
-          </div>
-        </div>
-      </div>
-
-      <a href="#about" class="scroll-cue" aria-label="Gulir ke bawah">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 5v14M5 12l7 7 7-7" />
-        </svg>
-      </a>
-    </section>
-
-    <!-- ===== ABOUT ===== -->
-    <section class="section" id="about">
-      <div class="section-inner about-grid">
-        <div>
-          <h2 class="section-title">About Me</h2>
-          <p class="about-text" id="aboutText">Loading…</p>
-        </div>
-        <ul class="fact-list" id="factList">
-          <!-- diisi oleh JS -->
-        </ul>
-      </div>
-    </section>
-
-    <!-- ===== SKILLS ===== -->
-    <section class="section section-alt" id="skills">
-      <div class="section-inner">
-        <h2 class="section-title">Skills</h2>
-        <p class="section-desc">Tools and languages I use to build projects from start to finish.</p>
-        <div class="skills-groups" id="skillsGroups">
-          <!-- diisi oleh JS -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== WORK / PROJECTS ===== -->
-    <section class="section" id="work">
-      <div class="section-inner">
-        <div class="section-head-row">
-          <div>
-            <h2 class="section-title">Projects</h2>
-            <p class="section-desc">Projects that I have completed and am currently working on.</p>
-          </div>
-          <div class="tag-filters" id="tagFilters">
-            <!-- diisi oleh JS -->
-          </div>
-        </div>
-        <div class="project-grid" id="projectGrid">
-          <!-- diisi oleh JS -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== EXPERIENCE TIMELINE ===== -->
-    <section class="section section-alt" id="experience">
-      <div class="section-inner">
-        <h2 class="section-title">Pengalaman</h2>
-        <p class="section-desc">Perjalanan kerja dan pencapaian saya sejauh ini.</p>
-        <div class="timeline" id="timeline">
-          <!-- diisi oleh JS -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CONTACT ===== -->
-    <section class="section" id="contact">
-      <div class="section-inner contact-grid">
-        <div class="contact-info">
-          <h2 class="section-title">Mari terhubung</h2>
-          <p class="section-desc">Punya proyek, peluang kerja, atau sekadar mau menyapa? Silakan kirim pesan.</p>
-
-          <div class="contact-links" id="contactLinks">
-            <!-- diisi oleh JS -->
-          </div>
-        </div>
-
-        <form class="contact-form" id="contactForm" novalidate>
-          <div class="form-row">
-            <label for="name">Nama</label>
-            <input type="text" id="name" name="name" placeholder="Nama kamu" required>
-          </div>
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="kamu@email.com" required>
-          </div>
-          <div class="form-row">
-            <label for="message">Pesan</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tulis pesan kamu di sini…" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" id="submitBtn">Kirim pesan</button>
-          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="section-inner footer-inner">
-      <span>© <span id="year"></span> Fariz Abdurahman Fakhri. Dibangun dengan Node.js, Express &amp; SQLite.</span>
+    <div class="giant" aria-hidden="true">PORTFOLIO</div>
+    <div class="hero-photo"><img src="/assets/Fariz.png" alt="Foto Fariz Abdurahman Fakhri"></div>
+    <div class="hero-copy">
+      <div class="script">Halo, saya</div>
+      <h1>FARIZ<br>ABDURAHMAN<br>FAKHRI</h1>
+      <div class="role">FULL-STACK DEVELOPER &amp; QA</div>
+      <p id="heroTagline"></p>
+      <div class="loc">◉ <span id="heroLoc">Indonesia</span></div>
     </div>
-  </footer>
+    <div class="hero-tag"><i>✦</i><span>Turning ideas into a solid web application.</span></div>
+    <div class="stats" id="stats"></div>
+  </section>
 
-  <!-- ===== PROJECT MODAL ===== -->
-  <div class="modal-backdrop" id="modalBackdrop">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal-close" id="modalClose" aria-label="Tutup">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round">
-          <path d="M18 6 6 18M6 6l12 12" />
-        </svg>
-      </button>
-      <div class="modal-cover" id="modalCover"></div>
-      <div class="modal-body">
-        <p class="modal-meta" id="modalMeta"></p>
-        <h3 id="modalTitle"></h3>
-        <p id="modalDesc"></p>
-        <div class="modal-tags" id="modalTags"></div>
-        <div class="modal-links" id="modalLinks"></div>
-      </div>
+  <!-- SELECTED PROJECTS -->
+  <section class="block" id="work">
+    <div class="head-row"><h2>PROJECTS</h2><span class="rule"></span><a href="#work" class="viewall" id="viewAll">VIEW ALL →</a></div>
+    <div class="proj-grid" id="projectGrid"></div>
+  </section>
+
+  <!-- SKILLS / EXPERIENCE / PROCESS / QUOTE -->
+  <section class="trio" id="skills">
+    <div class="col" id="experience">
+      <h2>EXPERIENCE &amp; SKILLS</h2>
+      <h4>EXPERIENCE</h4>
+      <div id="timeline"></div>
+      <h4>SKILLS</h4>
+      <div class="chips" id="skillsGroups"></div>
+    </div>
+    <div class="col">
+      <h2>WORKFLOW</h2>
+      <ol class="process">
+        <li><b>01</b><em>◎</em><div><h5>ANALYSIS</h5><p>Understanding requirements, users, and project goals.</p></div></li>
+        <li><b>02</b><em>◇</em><div><h5>DESIGN</h5><p>Designing database, API, and application flow.</p></div></li>
+        <li><b>03</b><em>✎</em><div><h5>BUILD</h5><p>Building a clean and efficient backend and frontend.</p></div></li>
+        <li><b>04</b><em>&lt;/&gt;</em><div><h5>TEST</h5><p>QA: finding gaps before users do.</p></div></li>
+        <li><b>05</b><em>➤</em><div><h5>DEPLOY</h5><p>Deploying, monitoring, and fixing with care.</p></div></li>
+      </ol>
+    </div>
+    <aside class="quote">
+      <div class="qmark">“</div>
+      <p>Good code is not just about it working, but also about it lasting.</p>
+      <div class="sign">Ais</div>
+      <small>LET'S CREATE SOMETHING AMAZING TOGETHER.</small>
+    </aside>
+  </section>
+
+  <!-- ABOUT (dari database) -->
+  <section class="block about" id="about">
+    <div class="head-row"><h2>ABOUT ME</h2><span class="rule"></span></div>
+    <p id="aboutText"></p>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="c-intro">
+      <h2>LET'S WORK<br>TOGETHER <i>✦</i></h2>
+      <p>I'm open to projects, collaborations, and new job opportunities. Let's create something impactful together.</p>
+    </div>
+    <div class="c-links" id="contactLinks"></div>
+    <form class="c-form" id="contactForm" novalidate>
+      <input type="text" id="name" placeholder="Nama" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <textarea id="message" rows="3" placeholder="Message" required></textarea>
+      <button type="submit" id="submitBtn">Send Message →</button>
+      <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+</main>
+
+<footer class="footer">© <span id="year"></span> Fariz Abdurahman Fakhri. Dibangun dengan Node.js, Express &amp; SQLite.</footer>
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Tutup">✕</button>
+    <div class="modal-cover" id="modalCover"></div>
+    <div class="modal-body">
+      <p class="modal-meta" id="modalMeta"></p>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+      <div class="modal-tags" id="modalTags"></div>
+      <div class="modal-links" id="modalLinks"></div>
     </div>
   </div>
-
-  <script src="/js/main.js"></script>
+</div>
+<script src="/js/main.js"></script>
 </body>
-
 </html>

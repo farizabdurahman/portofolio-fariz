@@ -84,15 +84,25 @@
   backdrop.addEventListener('click', e => { if (e.target === backdrop) closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
+    const FORM_ENDPOINT = 'https://formspree.io/f/xqpaojjn';
   const form = $('#contactForm'), status = $('#formStatus'), btn = $('#submitBtn');
   form.addEventListener('submit', async (e) => {
     e.preventDefault(); status.textContent = ''; status.className = 'form-status';
+    const name = $('#name').value.trim();
+    const email = $('#email').value.trim();
+    const message = $('#message').value.trim();
+    if (!name || !email || !message) {
+      status.textContent = 'Please fill in all fields.'; status.classList.add('err');
+      return;
+    }
     btn.disabled = true; btn.textContent = 'Sending…';
     try {
-      await fetchJSON('/api/contact', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: $('#name').value.trim(), email: $('#email').value.trim(), message: $('#message').value.trim() }),
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ name, email, message }),
       });
+      if (!res.ok) throw new Error('Message failed to send. Please try again.');
       status.textContent = 'Message sent. Thank you for reaching out!'; status.classList.add('ok'); form.reset();
     } catch (err) {
       status.textContent = err.message || 'Message failed to send. Please try again.'; status.classList.add('err');

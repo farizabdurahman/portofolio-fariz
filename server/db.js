@@ -3,10 +3,15 @@
 // Kenapa SQLite? Ringan, tidak perlu install DB server terpisah,
 // tapi tetap "database" sungguhan (bukan sekadar file JSON).
 
-const path = require('path');
-const Database = require('better-sqlite3');
+const fs = require('fs');
+const os = require('os');
 
-const DB_PATH = path.join(__dirname, 'data', 'portfolio.db');
+const DB_PATH = os.homedir() + '/.portfolio/portfolio.db';
+if (process.env.VERCEL) {
+  const tmp = path.join(os.tmpdir(), 'portfolio.db');
+  if (!fs.existsSync(tmp)) fs.copyFileSync(DB_PATH, tmp);
+  FB_PATH = tmp;
+}
 const db = new Database(DB_PATH);
 
 db.pragma('journal_mode = WAL');

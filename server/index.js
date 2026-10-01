@@ -26,6 +26,10 @@ app.get(/^(?!\/api).*/, (req, res) => {
   res.sendFile(path.join(PUBLIC_DIR, 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`\n🚀 Portfolio server jalan di: http://localhost:${PORT}\n`);
-});
+module.exports = app;
+
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`\n🚀 Portfolio server jalan di: http://localhost:${PORT}\n`);
+  });
+}

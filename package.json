@@ -11,6 +11,9 @@
   "keywords": ["portfolio", "fullstack"],
   "author": "Fariz Abdurahman Fakhri",
   "license": "ISC",
+  "engines": {
+    "node": "22.x"
+  },
   "dependencies": {
     "better-sqlite3": "^13.0.3",
     "cors": "^2.8.6",

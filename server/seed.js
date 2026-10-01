@@ -1,11 +1,3 @@
-// server/seed.js
-// Jalankan dengan: npm run seed
-// Mengisi database dengan data awal. AMAN dijalankan berkali-kali —
-// akan menghapus data lama di tabel profile/skills/projects/experience
-// (tabel "messages" dari form kontak TIDAK pernah dihapus oleh seed ini).
-//
-// ====> EDIT DATA KAMU DI FILE INI, lalu jalankan `npm run seed` lagi <====
-
 const db = require('./db');
 
 db.exec('DELETE FROM profile');
@@ -13,7 +5,6 @@ db.exec('DELETE FROM skills');
 db.exec('DELETE FROM projects');
 db.exec('DELETE FROM experience');
 
-// ---------- PROFILE ----------
 db.prepare(`
   INSERT INTO profile (id, full_name, nick_name, role, tagline, about, photo_url, resume_url, location, available)
   VALUES (1, ?, ?, ?, ?, ?, ?, ?, ?, ?)
@@ -23,31 +14,25 @@ db.prepare(`
   'Full-Stack Developer',
   'Building digital products from the server side all the way to the users screen.',
   'Hi, I’m Fariz—or Ais. I’m a full-stack developer who loves turning ideas into end-to-end web applications, handling everything from database design and backend logic to user-friendly interfaces. I’m also active in Quality Assurance, so I’m used to looking at code not just in terms of functionality, but also considering how it might break—all to ensure a more robust final product.',
-  null, // photo_url -> null berarti frontend akan pakai placeholder avatar
-  null, // resume_url -> isi link CV/PDF kamu di sini nanti
+  null,
+  null,
   'Indonesia',
   1
 );
 
-// ---------- SKILLS ----------
-// category dipakai untuk grouping di UI. Silakan tambah/kurangi sesuka hati.
 const skills = [
-  // Frontend
   ['HTML5', 'Frontend', 'Advanced', '🧱'],
   ['CSS3', 'Frontend', 'Advanced', '🎨'],
   ['JavaScript', 'Frontend', 'Advanced', '⚡'],
   ['React', 'Frontend', 'Intermediate', '⚛️'],
   ['Tailwind CSS', 'Frontend', 'Intermediate', '💨'],
-  // Backend
   ['Node.js', 'Backend', 'Advanced', '🟢'],
   ['Express.js', 'Backend', 'Advanced', '🚂'],
   ['REST API', 'Backend', 'Advanced', '🔌'],
   ['Authentication (JWT)', 'Backend', 'Intermediate', '🔐'],
-  // Database
   ['SQL', 'Database', 'Intermediate', '🗄️'],
   ['SQLite', 'Database', 'Intermediate', '📦'],
   ['MongoDB', 'Database', 'Intermediate', '🍃'],
-  // Tools & Quality
   ['Git & GitHub', 'Tools', 'Advanced', '🐙'],
   ['Postman', 'Tools', 'Advanced', '📮'],
   ['Manual & QA Testing', 'Tools', 'Advanced', '🧪'],
@@ -58,10 +43,6 @@ const insertSkill = db.prepare(`
 `);
 skills.forEach((s, i) => insertSkill.run(s[0], s[1], s[2], s[3], i));
 
-// ---------- PROJECTS ----------
-// Tambahkan project baru dengan menyalin salah satu blok di bawah.
-// cover_gradient bisa kamu ganti warnanya bebas (dipakai sebagai cover placeholder
-// selama kamu belum upload screenshot asli).
 const projects = [
   {
     title: 'To Do List App',
@@ -115,7 +96,6 @@ const insertProject = db.prepare(`
 `);
 projects.forEach((p, i) => insertProject.run({ ...p, sort_order: i }));
 
-// ---------- EXPERIENCE (& Awards / Training pakai tabel yang sama, beda "category") ----------
 const experience = [
   {
     title: 'Technical Support & IT Support',
@@ -123,8 +103,8 @@ const experience = [
     location: 'Indonesia',
     type: 'Full-time',
     category: 'Work',
-    start_date: '1 September 2023',
-    end_date: 'Durasi ± 18 bulan',
+    start_date: 'September 1, 2023',
+    end_date: '~18 months',
     description: 'Menangani troubleshooting perangkat dan jaringan, dukungan teknis untuk operasional kantor, serta pemeliharaan sistem IT sehari-hari selama kurang lebih 18 bulan.',
   },
   {
@@ -133,7 +113,7 @@ const experience = [
     location: 'Indonesia',
     type: 'Full-time',
     category: 'Work',
-    start_date: '8 Agustus 2025',
+    start_date: 'August 8, 2025',
     end_date: 'Present',
     description: 'Berperan dalam quality assurance produk digital: pengujian fitur, pelacakan bug, dan memastikan kualitas rilis sebelum sampai ke pengguna.',
   },

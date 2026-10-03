@@ -52,7 +52,7 @@
     renderStats();
     $('#projectGrid').innerHTML = state.projects.map((p, i) => `
       <article class="proj" data-slug="${esc(p.slug)}">
-        <div class="proj-cover" style="background:${p.cover_gradient || '#222'}">${p.cover_emoji || '💻'}</div>
+       <div class="proj-cover" style="background:${p.cover_gradient || '#222'}">${p.cover_emoji || '💻'}<img src="/assets/projects/${esc(p.slug)}.png" alt="" onerror="this.remove()"></div>
         <div class="proj-row"><span class="n">${String(i + 1).padStart(2, '0')}</span>
           <div><b>${esc(p.title)}</b><small>${esc((p.tags || []).join(' · '))}</small></div>
           <span class="arr">→</span></div>

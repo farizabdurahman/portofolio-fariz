@@ -112,4 +112,5 @@ h1,h2,h5{font-family:Inter,sans-serif}
   .trio{grid-template-columns:1fr}.col+.col,.quote{border-left:0;border-top:1px solid var(--line)}
   .trio>*,.trio .col:first-child{padding:36px 24px}
   .contact{grid-template-columns:1fr}
+  .proj-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;z-index:1}
 }

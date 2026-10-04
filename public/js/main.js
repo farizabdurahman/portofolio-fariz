@@ -52,16 +52,16 @@
     renderStats();
     $('#projectGrid').innerHTML = state.projects.map((p, i) => `
       <article class="proj" data-slug="${esc(p.slug)}">
-       <div class="proj-cover" style="background:${p.cover_gradient || '#222'}">${p.cover_emoji || '💻'}<img src="/assets/projects/${esc(p.slug)}.png" alt="" onerror="this.remove()"></div>
+        <div class="proj-cover" style="background:${p.cover_gradient || '#222'}">${p.cover_emoji || '💻'}<img src="/assets/projects/${esc(p.slug)}.png" alt="${esc(p.title)}" loading="lazy" onerror="this.remove()"></div>
         <div class="proj-row"><span class="n">${String(i + 1).padStart(2, '0')}</span>
           <div><b>${esc(p.title)}</b><small>${esc((p.tags || []).join(' · '))}</small></div>
           <span class="arr">→</span></div>
-      </article>`).join('');document.querySelectorAll('.proj').forEach(c => c.addEventListener('click', () => {
-  const p = state.projects.find(x => x.slug === c.dataset.slug);
-  if (p && p.live_url) window.open(p.live_url, '_blank', 'noopener');
-  else openModal(c.dataset.slug);
-}));
-
+      </article>`).join('');
+    document.querySelectorAll('.proj').forEach(c => c.addEventListener('click', () => {
+      const p = state.projects.find(x => x.slug === c.dataset.slug);
+      if (p && p.live_url) window.open(p.live_url, '_blank', 'noopener');
+      else openModal(c.dataset.slug);
+    }));
   }).catch(() => { $('#projectGrid').innerHTML = '<p style="color:#9a9a9a">Projects could not be loaded. Please refresh the page.</p>'; });
 
   const backdrop = $('#modalBackdrop');
@@ -84,7 +84,7 @@
   backdrop.addEventListener('click', e => { if (e.target === backdrop) closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-    const FORM_ENDPOINT = 'https://formspree.io/f/xqpaojjn';
+  const FORM_ENDPOINT = 'https://formspree.io/f/xqpaojjn';
   const form = $('#contactForm'), status = $('#formStatus'), btn = $('#submitBtn');
   form.addEventListener('submit', async (e) => {
     e.preventDefault(); status.textContent = ''; status.className = 'form-status';
